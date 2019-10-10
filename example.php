@@ -5,9 +5,9 @@
 
 <body>
 <?php
-    $enableGetDeviceInfo = true;
+    $enableGetDeviceInfo = false;
     $enableGetUsers = false;
-    $enableGetData = false;
+    $enableGetData = true;
 
     include('zklib/ZKLib.php');
 
@@ -75,8 +75,6 @@
                 //$zk->setUser(3, '3', 'User3', '', ZK\Util::LEVEL_USER);
                 //$zk->setUser(5, '5', 'Admin', '1234', ZK\Util::LEVEL_ADMIN);
                 $users = $zk->getUser();
-                var_dump($users);
-                /*print_r($users);
                 sleep(1);
                 foreach ($users as $uItem) {
                     ?>
@@ -98,7 +96,7 @@
             //$zk->clearUsers();
             //$zk->removeUser(1);
             ?>
-        </table>*/
+        </table>
         <?php } ?>
         <?php if ($enableGetData === true) { ?>
             <table border="1" cellpadding="5" cellspacing="2">
@@ -116,7 +114,9 @@
                 </tr>
                 <?php
                     $attendance = $zk->getAttendance();
-                    if (count($attendance) > 0) {
+                    var_dump($attendance); 
+                    ?>
+                    <?php/*if (count($attendance) > 0) {
                         $attendance = array_reverse($attendance, true);
                         sleep(1);
                         foreach ($attendance as $attItem) {
@@ -140,7 +140,7 @@
                     //$zk->clearAttendance(); // Remove attendance log only if not empty
                 }
             ?>
-        <?php } ?>
+        <?php } ?>*/?>
         <?php
         $zk->enableDevice();
         $zk->disconnect();
