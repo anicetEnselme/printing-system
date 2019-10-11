@@ -44,6 +44,7 @@ class ZKLib
         $session_id = $this->_session_id;
 
         $u = unpack('H2h1/H2h2/H2h3/H2h4/H2h5/H2h6/H2h7/H2h8', substr($this->_data_recv, 0, 8));
+        var_dump($u);
         $reply_id = hexdec($u['h8'] . $u['h7']);
 
         $buf = Util::createHeader($command, $chksum, $session_id, $reply_id, $command_string);
