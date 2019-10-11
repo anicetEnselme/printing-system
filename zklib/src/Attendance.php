@@ -48,7 +48,7 @@ class Attendance
                     'type' => $type
                 ];
 
-                //$attData = substr($attData, 40);
+                $attData = substr($attData, 40);
             }
 
         }
