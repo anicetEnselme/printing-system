@@ -114,9 +114,8 @@
                 </tr>
                 <?php
                     $attendance = $zk->getAttendance();
-                    var_dump($attendance); 
                     ?>
-                    <?php/*if (count($attendance) > 0) {
+                    <?php if (count($attendance) > 0) {
                         $attendance = array_reverse($attendance, true);
                         sleep(1);
                         foreach ($attendance as $attItem) {
